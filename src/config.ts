@@ -51,7 +51,11 @@ export const config = {
   privacyPolicyLinkName: process.env.PRIVACY_POLICY_LINK_NAME?.trim() || 'Privacy policy',
   termsOfServiceTitle: process.env.TERMS_OF_SERVICE_TITLE?.trim() || 'Terms of Service',
   privacyPolicyTitle: process.env.PRIVACY_POLICY_TITLE?.trim() || 'Privacy policy',
-  paywallHeading: process.env.PAYWALL_HEADING?.trim() || 'subscription|paywall|plan|premium',
+  paywallHeading:
+    process.env.PAYWALL_HEADING?.trim() ||
+    'subscription|paywall|plan|premium|choose a plan',
+  profileMenuPattern:
+    process.env.PROFILE_MENU_PATTERN?.trim() || String.raw`^😇$|^🤠$|^👤$`,
   signupEmailDomain: process.env.SIGNUP_EMAIL_DOMAIN?.trim() || 'example.com',
   vercelAuthStoragePath: path.resolve(
     __dirname,

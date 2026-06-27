@@ -38,7 +38,7 @@ APP_WELCOME_TEXT=Welcome to IDEA
 APP_HOME_TITLE=IDEA - Example application
 ```
 
-Adjust `APP_WELCOME_TEXT` and `APP_HOME_TITLE` to match your app’s sign-up modal and home page title.
+Adjust `APP_WELCOME_TEXT`, `APP_HOME_TITLE`, `PAYWALL_HEADING`, and `PROFILE_MENU_PATTERN` to match your app’s sign-up modal, home page, paywall, and profile menu.
 
 ## Running tests
 

@@ -148,7 +148,7 @@ export class AuthPage {
   }
 
   profileMenuButton(): Locator {
-    return this.page.getByText(/^😇$|^🤠$|^👤$|^Q$/).first();
+    return this.page.getByText(new RegExp(config.profileMenuPattern)).first();
   }
 
   logOutButton(): Locator {
@@ -321,13 +321,11 @@ export class AuthPage {
   }
 
   async expectPaywallOrSubscription(): Promise<void> {
-    await expect(
-      this.page
-        .getByText(/choose a subscription/i)
-        .or(this.page.getByText(/get unlimited access to all audios/i))
-        .or(this.page.getByText(/\$59\.99|\$7\.99/))
-        .first(),
-    ).toBeVisible({ timeout: 15_000 });
+    const patterns = config.paywallHeading.split('|').map((part) => part.trim()).filter(Boolean);
+    const escaped = patterns.map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    await expect(this.page.getByText(new RegExp(escaped.join('|'), 'i')).first()).toBeVisible({
+      timeout: 15_000,
+    });
   }
 
   async expectValidationErrorsVisible(): Promise<void> {
