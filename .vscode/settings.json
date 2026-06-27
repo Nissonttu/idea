@@ -1,0 +1,10 @@
+{
+  "playwright.envFile": "${workspaceFolder}/.env",
+  "playwright.reuseBrowser": true,
+  "playwright.showTrace": false,
+  "testing.gutterEnabled": true,
+  "testing.defaultGutterClickAction": "run",
+  "testing.automaticallyOpenPeekView": "never",
+  "testing.openTesting": "openExplorerOnTestStart",
+  "testing.automaticallyOpenTestResults": "openExplorerOnTestStart"
+}

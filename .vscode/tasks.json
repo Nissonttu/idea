@@ -1,0 +1,55 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Playwright: smoke",
+      "type": "npm",
+      "script": "test:smoke",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "group": { "kind": "test", "isDefault": true }
+    },
+    {
+      "label": "Playwright: sign-up (headed)",
+      "type": "npm",
+      "script": "test:sign-up:headed",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "Playwright: UI mode",
+      "type": "npm",
+      "script": "test:ui",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "Playwright: all",
+      "type": "npm",
+      "script": "test:all",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "Playwright: all (headed)",
+      "type": "npm",
+      "script": "test:all:headed",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "Playwright: automated (headed)",
+      "type": "npm",
+      "script": "test:headed",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "Playwright: current file",
+      "type": "shell",
+      "command": "npx playwright test ${relativeFile} --headed",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    }
+  ]
+}

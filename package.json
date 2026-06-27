@@ -1,0 +1,40 @@
+{
+  "name": "idea-e2e",
+  "version": "1.0.0",
+  "description": "Example Playwright E2E tests for the IDEA app (anonymized showcase)",
+  "scripts": {
+    "postinstall": "playwright install chromium firefox webkit",
+    "pretest": "playwright install chromium firefox webkit",
+    "test": "playwright test --project=smoke-chromium --project=smoke-firefox --project=smoke-webkit --project=smoke-iphone --project=smoke-android --project=chromium --project=firefox --project=webkit --project=iphone --project=android",
+    "test:all": "playwright test --project=sign-up --headed --workers=1 && npm test",
+    "test:desktop": "playwright test --project=smoke-chromium --project=smoke-firefox --project=smoke-webkit --project=chromium --project=firefox --project=webkit",
+    "test:mobile": "playwright test --project=smoke-iphone --project=smoke-android --project=iphone --project=android",
+    "test:ios": "playwright test --project=smoke-iphone --project=iphone",
+    "test:android": "playwright test --project=smoke-android --project=android",
+    "test:chromium": "playwright test --project=smoke-chromium --project=chromium",
+    "test:firefox": "playwright test --project=smoke-firefox --project=firefox",
+    "test:webkit": "playwright test --project=smoke-webkit --project=webkit",
+    "test:sign-up": "playwright test --project=sign-up",
+    "test:sign-up:ui": "playwright test --project=sign-up --ui",
+    "test:sign-up:headed": "playwright test --project=sign-up --headed --workers=1",
+    "test:run": "node scripts/run-tests.js",
+    "test:ui": "playwright test --ui",
+    "test:headed": "npm run test:chromium -- --headed --workers=1 && npm run test:firefox -- --headed --workers=1 && npm run test:webkit -- --headed --workers=1 && npm run test:ios -- --headed --workers=1 && npm run test:android -- --headed --workers=1",
+    "test:all:headed": "npm run test:sign-up:headed && npm run test:headed",
+    "test:desktop:headed": "npm run test:chromium -- --headed --workers=1 && npm run test:firefox -- --headed --workers=1 && npm run test:webkit -- --headed --workers=1",
+    "test:mobile:headed": "npm run test:ios -- --headed --workers=1 && npm run test:android -- --headed --workers=1",
+    "test:smoke": "playwright test --project=smoke-chromium --project=smoke-firefox --project=smoke-webkit --project=smoke-iphone --project=smoke-android",
+    "test:auth": "playwright test --project=chromium --project=firefox --project=webkit --project=iphone --project=android",
+    "auth:vercel": "playwright test --project=vercel-auth",
+    "auth:vercel:manual": "KEEP_BROWSER_OPEN=1 playwright test --project=vercel-auth-manual",
+    "auth:setup": "playwright test --project=setup"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "1.61.0-alpha-2026-06-09",
+    "@types/node": "^22.15.0",
+    "dotenv": "^17.4.2",
+    "typescript": "^5.8.0"
+  }
+}
